@@ -1,6 +1,6 @@
 # Vim 配置备份
 
-### Wang Hsutung
+####By Wang Hsutung
 
 ## 安装方法
 
@@ -22,7 +22,7 @@
  可以调用 `:call SetRunprg()` 设置执行可执行的命令和参数
 * 要使用模板功能, 请在 ~/Templates/ 下建立类似一下代码的模板文件, 并更改 ~/.vim/myconf/sourceCodeMode.vim 文件中各模板文件的路经变量。以后建立新的 `*.c` 或 `*.cpp` 或 `*.java` 文件时, 会载入模板文件并在 Author, Date, Locale, Email 后加上你设定的值。(Date自动生成)
 
-```
+```C
 /*
  * Author:
  * Date:
