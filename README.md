@@ -23,6 +23,7 @@
  1. 按 `<F5>` 编译当前文件. 如果当前目录下有 Makefile, 直接 make, 否则执行类似 `gcc -Wall -g main.cpp -o main` 的命令.
  可以调用 `:call SetMakeprg()` 设置编译程序的命令和参数
  2. 按 `<F7>` 执行对应可执行文件(比如, 在编辑 main.cpp, 则运行 ./main)
+ 3. 按 `<F9>` 一键编译运行
  可以调用 `:call SetRunprg()` 设置执行可执行的命令和参数
 * 要使用模板功能, 请在 ~/Templates/ 下建立类似一下代码的模板文件, 并更改 ~/.vim/myconf/sourceCodeMode.vim 文件中各模板文件的路经变量。以后建立新的 `*.c` 或 `*.cpp` 或 `*.java` 文件时, 会载入模板文件并在 Author, Date, Locale, Email 后加上你设定的值。(Date自动生成)
 
