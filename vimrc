@@ -48,15 +48,15 @@ set nocompatible
 set backspace=indent,eol,start
 
 if has("vms")
-    set nobackup		" do not keep a backup file, use versions instead
+    set nobackup        " do not keep a backup file, use versions instead
 else
-    set backup		" keep a backup file (restore to previous version)
-    set undofile		" keep an undo file (undo changes after closing)
+    set backup          " keep a backup file (restore to previous version)
+    set undofile        " keep an undo file (undo changes after closing)
 endif
-set history=100		" keep 100 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=100         " keep 100 lines of command line history
+set ruler               " show the cursor position all the time
+set showcmd             " display incomplete commands
+set incsearch           " do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -109,7 +109,7 @@ if has("autocmd")
     augroup END
 
 else
-    set autoindent		" always set autoindenting on
+    set autoindent      " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -127,7 +127,8 @@ endif
 " Locale: Hubei Wuhan
 " Email: hsu[AT]whu.edu.cn
 
-colorscheme elflord
+colorscheme koehler
+let mapleader = ","
 set dictionary+=/usr/share/dict/words
 set number           " 显示行号
 set nobackup         " 不备份文件
@@ -155,7 +156,7 @@ set softtabstop=4
 set shiftwidth=4
 " Syntax on 会用缺省值覆盖自己的色彩设置, enable 不会。
 syntax enable
-set cindent		" 优先级高于 smartindent
+set cindent        " 优先级高于 smartindent
 set smartindent
 " 把系统粘贴版和默认粘贴版关联
 if has('clipboard')
@@ -243,20 +244,17 @@ let g:indentLine_color_gui = '#A4E57E'
 let g:indentLine_color_tty_light = 7 " (default: 4)
 let g:indentLine_color_dark = 1 " (default: 2)
 
-
-let g:Powerline_symbols = 'fancy'
+" Airline设置
+set laststatus=2
+" 使用 Powerline 打过补丁的字体
 let g:airline_powerline_fonts = 1
-
-if has('statusline')
-    set laststatus=2
-    " Broken down into easily includeable segments
-    set statusline=%<%f\                     " Filename
-    set statusline+=%w%h%m%r                 " Options
-    "    set statusline+=%{fugitive#statusline()} " Git Hotness
-    set statusline+=\ [%{&ff}/%Y]            " Filetype
-    set statusline+=\ [%{getcwd()}]          " Current dir
-    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
+" 开启 Tabline
+"let g:airline#extensions#tabline#enabled = 1
+" Tabline 中 buffer 显示编号
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+" 映射切换 buffer 的键位
+nnoremap [b :bp<CR>
+nnoremap ]b :bn<CR>
 
 " Java 补全
 autocmd FileType java set omnifunc=javacomplete#Complete
@@ -265,7 +263,7 @@ nnoremap <F4> call javacomplete#AddImport()<cr>
 " Rainbow
 let g:rainbow_active = 1
 
-"Vimim
+" Vimim
 let g:Vimim_shuangpin = 'ms'
 let g:vimim_cloud = 'sogou,baidu,qq'
 
