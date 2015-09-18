@@ -205,8 +205,8 @@ cmap w!! w !sudo tee % >/dev/null
 source ~/.vim/myconf/sourceCodeMode.vim  " 执行我的脚本
 
 "****************** 插件相关设置 *******************
-autocmd filetype c let g:ycm_global_ycm_extra_conf = '/home/wang/.vim/myconf/ycm_extra_conf_c.py'
-autocmd filetype cpp let g:ycm_global_ycm_extra_conf = '/home/wang/.vim/myconf/ycm_extra_conf_cpp.py'
+autocmd filetype c let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_c.py'
+autocmd filetype cpp let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_cpp.py'
 let g:ycm_key_invoke_completion = '<F3>'
 
 let Tlist_Use_Split_Window = 1

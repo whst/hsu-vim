@@ -122,7 +122,7 @@ function! QuickInsertion()
     inoremap \\st struct<Space><Space>{<CR>};<Esc>k^whi
     inoremap \\if if<Space>()<Space>{<CR>}<Esc>k^wa
     inoremap \\ie if<Space>()<Space>{<CR>}<Space>else<Space>{<CR>}<Esc>2k^wa
-    inoremap \\ei else<Space>if()<Space>()<Space>{<CR>}<Esc>k^2wa
+    inoremap \\ei <Space>else<Space>if<Space>()<Space>{<CR>}<Esc>k^3wa
     inoremap \\el <Space>else<Space>{<CR>}<Esc>O
     inoremap \\fo for<Space>(;;)<Space>{<CR>}<Esc>k^wa
     inoremap \\wh while<Space>()<Space>{<CR>}<Esc>k^wa

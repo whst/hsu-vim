@@ -3,14 +3,12 @@
 ####By Wang Hsutung
 
 欢迎__喜欢 Vim 的同学__与我交流 Vim 使用中的一些小技巧, 亦或是一些非常 awesome 的插件.  
-我不反对用 IDE, 事实上我承认 Vim/Emacs 的局限性很大。而且我也从来不说服已经在使用其他工具的人转到 Vim 上来。
-因此请不要说服我_放弃使用编辑器_或对 Vim 使用者进行言语攻击.
 
 ## 安装方法
 
 * 使用 Vundle 进行插件管理, 请先安装 Vundle. 请参照 [Vundle 主页](https://github.com/VundleVim/Vundle.vim);
 * 克隆本 Vim 配置到本地后, 请运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待);
-* Ycm 插件改用 Debian 8.1 源里已经编译好的 (Ubuntu 14.04以后的版本也有)
+* Ycm 插件改用 Debian 8 源里已经编译好的 (Ubuntu 14.04以后的版本也有)
     具体步骤:
     1. `$ sudo apt-get install vim-addon-manager vim-youcompleteme`
     2. `$ vam install youcompleteme`
