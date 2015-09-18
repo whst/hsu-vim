@@ -1,19 +1,26 @@
 # Vim 配置备份
 
-####By Wang Hsutung
+#### By Wang Hsutung
 
-欢迎__喜欢 Vim 的同学__与我交流 Vim 使用中的一些小技巧, 亦或是一些非常 awesome 的插件.  
+欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常 awesome 的插件 :-)  
 
 ## 安装方法
+1. 克隆本配置到本地:
+2. 安装 [Vundle](https://github.com/VundleVim/Vundle.vim), 一个 Vim 插件管理器;
+3. 下栽 Debian 8 源里已经编译好的 Ycm 插件 (Ubuntu 14.04以后的版本也有)
+4. 用 Vim-addon-manager 把 Ycm 链接到 .Vim 目录下
+5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)
 
-* 使用 Vundle 进行插件管理, 请先安装 Vundle. 请参照 [Vundle 主页](https://github.com/VundleVim/Vundle.vim);
-* 克隆本 Vim 配置到本地后, 请运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待);
-* Ycm 插件改用 Debian 8 源里已经编译好的 (Ubuntu 14.04以后的版本也有)
-    具体步骤:
-    1. `$ sudo apt-get install vim-addon-manager vim-youcompleteme`
-    2. `$ vam install youcompleteme`
+各步骤对应命令如下：
+```bash
+git clone https://github.com/whst/hsu-vim.git ~/.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo apt-get install vim-addon-manager vim-youcompleteme
+vam install youcompleteme
+vim -c "execute \"PluginInstall\" | qa"
+```
 
-## 以下是对我自己写的功能的简略说明, 插件使用方法请参照各插件主页的 README 说明
+## **SourceCodeMode.vim** 简略说明
 
 
 * 按 `\\if` 可快速插入 `if() {}` 代码块, `\\fo` 插入 `for(;;) {}`. 其他请见 ~/.vim/myconf/sourceCodeMode.vim 源码;
