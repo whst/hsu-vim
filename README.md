@@ -11,6 +11,8 @@
 4. 用 Vim-addon-manager 把 Ycm 链接到 .Vim 目录下
 5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)
 
+[Optional]:把 `~/.vim/bundle/fcitx-status/plugin/fcitx.vim` 中 `timeoutlen` 改为 850
+
 各步骤对应命令如下：
 ```bash
 git clone https://github.com/whst/hsu-vim.git ~/.vim
@@ -33,6 +35,8 @@ vim -c "execute \"PluginInstall\" | qa"
 * 要使用模板功能, 请在 ~/Templates/ 下建立类似以下代码的模板文件, 并更改 ~/.vim/myconf/sourceCodeMode.vim 文件中各模板文件的路经变量。以后建立新的 `*.c` 或 `*.cpp` 或 `*.java` 文件时, 会载入模板文件并在 Author, Date, Locale, Email 后加上你设定的值。(Date自动生成)
 
 模板文件示例:
+
+~/Templates/C源代码.c
 ```C
 /*
  * Author:
@@ -48,5 +52,50 @@ int main(int argc, char *argv[])
 {
     printf("Hello, world!\n");
     exit(EXIT_SUCCESS);
+}
+```
+
+~/Templates/C++源代码.cpp
+```C++
+/*
+ * Author:
+ * Date:
+ * Locale:
+ * Email:
+ */
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdlib>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    cout << "Hello, world!" << endl;
+    exit(EXIT_SUCCESS);
+}
+```
+
+
+~/Templates/Java类样本.java
+```Java
+/**
+ * Author:
+ * Date:
+ * Locale:
+ * Email:
+ */
+import java.util.*;
+
+public class ClassName {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("int >> ");
+        int n = input.nextInt();
+        System.out.println("Your input: " + n);
+    }
 }
 ```
