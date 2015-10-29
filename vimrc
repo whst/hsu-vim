@@ -210,8 +210,7 @@ autocmd filetype cpp let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_
 let g:ycm_key_invoke_completion = '<F3>'
 
 let Tlist_Use_Split_Window = 1
-command! WM NERDTreeToggle | TlistToggle
-map wmr :WM<CR>
+command! WinManager NERDTreeToggle | TlistToggle
 
 autocmd WinEnter * call s:CloseIfOnlyControlLeft()
 " 在进入新窗口时，如果没有编辑区了，退出 Vim
