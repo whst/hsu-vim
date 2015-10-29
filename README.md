@@ -10,15 +10,14 @@
 <del>3. 安装 Debian 8 源里已经编译好的 Ycm 插件 (Ubuntu 14.04 以后的版本也有)<br></del>
 <del>4. 用 Vim-addon-manager 把 Ycm 链接到 ~/.vim 目录下<br></del>
 <del>5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)<br></del>
-1. 执行 `git clone git clone https://github.com/whst/hsu-vim.git ~/.vim && ~/.vim/gitfiles/install.sh`
+1. 执行 `git clone https://github.com/whst/hsu-vim.git ~/.vim && sh ~/.vim/gitfiles/install.sh`
 2. 把 ~/.vim/myconf/sourceCodeMode.vim 中的个人信息改成自己的
 
 ## Vim 配置功能说明
 
 * 编辑 C/C++、Java、Python 等文件时，按 `<F3>` 进行语义补全；
 ![Ycm Completion](https://raw.githubusercontent.com/whst/hsu-vim/master/gitfiles/auto.png) <br>
-上图可以看出语义部全**支持 C++11** 的 auto 类型推导。
-* 按 `\\if` 可快速插入 `if() {}` 代码块, `\\fo` 插入 `for(;;) {}`. 其他请见 ~/.vim/myconf/sourceCodeMode.vim 源码;
+上图可以看出语义补全**支持 C++11** 的 auto 类型推导。
 * 简单的代码片段插入：
  * 按 `\\if` 可快速插入 `if () {}`
  * 按 `\\ie` 可快速插入 `if () {} else {}`
