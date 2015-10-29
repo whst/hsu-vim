@@ -5,12 +5,12 @@
 欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常 awesome 的插件 :-)  
 
 ## 安装方法
-~1. 克隆本配置到本地:~
-~2. 安装 [Vundle](https://github.com/VundleVim/Vundle.vim), 一个 Vim 插件管理器;~
-~3. 安装 Debian 8 源里已经编译好的 Ycm 插件 (Ubuntu 14.04 以后的版本也有)~
-~4. 用 Vim-addon-manager 把 Ycm 链接到 ~/.vim 目录下~
-~5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)~
-6. 把 ~/.vim/myconf/sourceCodeMode.vim 中的个人信息改成你自己的
+<del>1. 克隆本配置到本地:</del>
+<del>2. 安装 [Vundle](https://github.com/VundleVim/Vundle.vim), 一个 Vim 插件管理器;</del>
+<del>3. 安装 Debian 8 源里已经编译好的 Ycm 插件 (Ubuntu 14.04 以后的版本也有)</del>
+<del>4. 用 Vim-addon-manager 把 Ycm 链接到 ~/.vim 目录下</del>
+<del>5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)</del>
+6. 把 ~/.vim/myconf/sourceCodeMode.vim 中的个人信息改成你自己
 
 
 ## **SourceCodeMode.vim** 简略说明
@@ -28,6 +28,8 @@
  * 按 `\\cl` 可快速插入 `class X{};`
  * 按 `\\st` 可快速插入 `struct X{};`
 * 编辑 C/C++、Java、Python 等文件时，按 `<F3>` 进行语义补全；
+![Ycm Completion](https://github.com/whst/hsu-vim/tree/master/gitfiles/auto.jpg)
+上图可以看出语义部全支持 C++11 的 auto 类型推导。
 * 快速编译运行:
  1. 按 `<F5>` 编译当前文件. 如果当前目录下有 Makefile, 直接 make, 否则执行类似 `gcc -Wall -g main.cpp -o main` 的命令.
  可以调用 `:call SetMakeprg()` 设置编译程序的命令和参数
