@@ -10,7 +10,7 @@ Plugin 'jiangmiao/auto-pairs'               " 括号补全
 Plugin 'Valloric/ListToggle'                " 文件列表
 Plugin 'asins/vimcdoc'                      " 中文文档
 Plugin 'luochen1990/rainbow'                " 彩虹括号
-Plugin 'artur-shaik/vim-javacomplete2'      " Java 补全
+Plugin 'vim-scripts/vim-javacomplete2'      " Java 补全
 Plugin 'taglist.vim'                        " Tag 列表
 Plugin 'bling/vim-airline'                  " 类似Powerline
 Plugin 'Yggdroot/indentLine'                " 缩进线
