@@ -34,16 +34,21 @@ function! SourceCodeMode()
     "    inoremap } <C-r>=ClosePair('}')<CR>
     "    inoremap [ []<Esc>i
     "    inoremap ] <C-r>=ClosePair(']')<CR>
-    " The next 3 line seems doesn't work, I just keep them. X-(
-    "    inoremap <S-Enter> <C-r>=SkipPair()<CR>
     inoremap <C-Enter> <Esc>A;<CR>
     inoremap <S-Space> <Esc>la
 
     call QuickBuild()
 
     if &filetype == "c"
-        if !(filereadable("Makefile") || filereadable("makefile") || filereadable("GNUmake"))
-            setlocal makeprg=gcc\ -g\ -Wall\ %\ -o\ %<
+        if search('[\"<]cv\.h[\">]', 'n') > 0
+            let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_c_opencv.py'
+            let &makeprg = "gcc -g -Wall `pkg-config --libs --cflags opencv` % -o %<"
+        else
+            let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_c.py'
+            let &makeprg = "gcc -g -Wall % -o %<"
+        endif
+        if filereadable("Makefile") || filereadable("makefile") || filereadable("GNUmake")
+            setlocal makeprg=make
         endif
         let g:runprg = expand("./%<")
         call QuickInsertion()

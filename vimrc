@@ -31,8 +31,8 @@ filetype plugin indent on    " required
 "************************** VIMRC Example ***********************************"
 " An example for a vimrc file.
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2014 Feb 05
+" Maintainer:   Bram Moolenaar <Bram@vim.org>
+" Last change:  2014 Feb 05
 "
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -205,37 +205,19 @@ cmap w!! w !sudo tee % >/dev/null
 source ~/.vim/myconf/sourceCodeMode.vim  " 执行我的脚本
 
 "****************** 插件相关设置 *******************
-autocmd filetype c let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_c.py'
-autocmd filetype cpp let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_cpp.py'
 let g:ycm_key_invoke_completion = '<F3>'
 
-let Tlist_Use_Split_Window = 1
-command! WinManager NERDTreeToggle | TlistToggle | winc l
-"command! WinManager TlistToggle | winc l
+let NERDTreeWinPos = "right"
+let Tlist_Exit_OnlyWindow = 1
+"let Tlist_Use_Right_Window = 1
+"let Tlist_Compact_Format = 1
+"let Tlist_Display_Prototype = 1
+
+command! WinManager NERDTreeToggle | TlistToggle | winc w
+command! TagList TlistToggle | winc w
+command! FileList NERDTreeToggle
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd WinEnter * call s:CloseIfOnlyControlLeft()
-" 在进入新窗口时，如果没有编辑区了，退出 Vim
-function! s:CloseIfOnlyControlLeft()
-    if exists("t:NERDTreeBufName") && exists("g:TagList_title")
-        if bufwinnr(t:NERDTreeBufName) != -1 && bufwinnr(g:TagList_title) != -1
-            if winnr("$") == 2
-                q
-            endif
-        endif
-        " 接下来的两个 if 一定要在后面
-    endif
-    if exists("t:NERDTreeBufName") && winnr("$") == 1
-        if bufwinnr(t:NERDTreeBufName) != -1
-            q
-        endif
-    endif
-    if exists("g:TagList_title") && winnr("$") == 1
-        if bufwinnr(g:TagList_title) != -1
-            q
-        endif
-    endif
-endfunction
 
 " Vim Indent Line
 let g:indentLine_color_term = 239
