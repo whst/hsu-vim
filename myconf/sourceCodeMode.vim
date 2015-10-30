@@ -45,7 +45,7 @@ function! SourceCodeMode()
             let &makeprg = "gcc -g -Wall `pkg-config --libs --cflags opencv` % -o %<"
         else
             let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_c.py'
-            let &makeprg = "gcc -g -Wall % -o %<"
+            setlocal makeprg=gcc\ -g\ -Wall\ %\ -o\ %<
         endif
         if filereadable("Makefile") || filereadable("makefile") || filereadable("GNUmake")
             setlocal makeprg=make
@@ -66,7 +66,7 @@ function! SourceCodeMode()
         setlocal makeprg=gmcs\ %
         let g:runprg= expand("./%<.exe")
     elseif &filetype == "python"
-        setlocal makeprg=echo\ import\ %<\ \\\|\ python3
+        setlocal makeprg=echo\ -n
         let g:runprg = expand("python3 %")
     elseif &filetype == "sh"
         setlocal makeprg=bash\ -n\ %
@@ -134,12 +134,6 @@ function! QuickInsertion()
     inoremap \\dw do<Space>{<CR>}<Space>while<Space>();<Esc>^2wa
     inoremap \\sw switch<Space>()<Space>{<CR>case<Space>1:<CR>break;
                 \<CR>case<Space>2:<CR>break;<CR>default:<CR>}<Esc>6k^wa
-    "inoremap #inc #include<Space><><Esc>i
-    "#inoremap #Inc #include<Space><><Esc>i
-    "   inoremap #in #include<Space>""<Esc>i
-    "inoremap #def #define<Space>
-    "inoremap #ifd #ifdef<Space>
-    "inoremap #ifn #ifndef<Space>
 endfunction
 
 function! QuickBuild()
@@ -169,65 +163,6 @@ function! RunProgram()
     execute "!" . g:runprg
 endfunction
 
-function! ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endfunction
-
-function! Semicolon()
-    if getline('.')[col('.')] == ')'
-        return "<Esc>A;"
-    elseif getline('.')[col('.')] == '}'
-        return "\<Esc>A;"
-    elseif getline('.')[col('.')] == ']'
-        return "\<Esc>A;"
-    else
-        return ";"
-    endif
-endfunction
-
-function! SkipPair()
-    if getline('.')[col('.') - 1] == ')'
-        return "\<Esc>o"
-    else
-        normal j
-        let curline = line('.')
-        let nxtline = curline
-        while curline == nxtline
-            if getline('.')[col('.') - 1] == '}'
-                normal j
-                let nxtline = nxtline + 1
-                let curline = line('.')
-                continue
-            else
-                return "\<Esc>i"
-            endif
-        endwhile
-        return "\<Esc>o"
-    endif
-endfunction
-
-function! CloseBrace()
-    if getline('.')[col('.') - 2] == '='
-        return "{}\<Esc>i"
-    elseif getline('.')[col('.') - 3] == '='
-        return "{}\<Esc>i"
-    elseif getline('.')[col('.') - 1] == '{'
-        return "{}\<Esc>i"
-    elseif getline('.')[col('.') - 2] == '{'
-        return "{}\<Esc>i"
-    elseif getline('.')[col('.') - 2] == ','
-        return "{}\<Esc>i"
-    elseif getline('.')[col('.') - 3] == ','
-        return "{}\<Esc>i"
-    else
-        return "{\<CR>}\<Esc>O"
-    endif
-endfunction
-
 command! SetMakeprg call SetMakeprg()
 function! SetMakeprg()
     let &makeprg = input("Compile Command --- $ ", &makeprg, "shellcmd")
@@ -237,5 +172,4 @@ command! SetRunprg call SetRunprg()
 function! SetRunprg()
     let g:runprg = input("Run Command --- $ ", g:runprg, "shellcmd")
 endfunction
-
 
