@@ -30,20 +30,16 @@ flags = [
 
 # std is required
 # clang won't know which language to use compiling headers
-'-std=c99',
+'-std=c++11',
 
 # '-x' and 'c++' also required
 # use 'c' for C projects
 '-x',
-'c',
+'c++',
 
 # include third party libraries
 #'-isystem',
-#'/usr/include/python2.7',
-'-isystem',
-'/usr/include',
-'-isystem',
-'/usr/include/opencv',
+#'/usr/include',
 ]
 
 # youcompleteme is calling this function to get flags

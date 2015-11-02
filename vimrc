@@ -5,24 +5,24 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'                  " Vundle 必选
+Plugin 'gmarik/Vundle.vim'                  " Vundle必选
 Plugin 'jiangmiao/auto-pairs'               " 括号补全
-Plugin 'Valloric/ListToggle'                " 文件列表
 Plugin 'asins/vimcdoc'                      " 中文文档
 Plugin 'luochen1990/rainbow'                " 彩虹括号
-Plugin 'vim-scripts/vim-javacomplete2'      " Java 补全
-Plugin 'taglist.vim'                        " Tag 列表
-Plugin 'bling/vim-airline'                  " 类似Powerline
+Plugin 'Valloric/ListToggle'                " QuickFix
+Plugin 'artur-shaik/vim-javacomplete2'      " Java补全
+Plugin 'taglist.vim'                        " Tag列表
 Plugin 'Yggdroot/indentLine'                " 缩进线
-Plugin 'The-NERD-tree'
+Plugin 'The-NERD-tree'                      " 文件窗口
 Plugin 'minibufexplorerpp'                  " 可视化标签
 Plugin 'Visual-Mark'                        " 可视化书签
-Plugin 'altercation/vim-colors-solarized'   " Solarized 配色
 Plugin 'tomasr/molokai'                     " Sublime 配色
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/VimIM'                  " Vim 输入法
-Plugin 'humiaozuzu/fcitx-status'            " 记录 Fcitx 输入状态
+Plugin 'altercation/vim-colors-solarized'   " Solarized 配色
+Plugin 'bling/vim-airline'                  " 类似Powerline
+Plugin 'vim-scripts/VimIM'                  " Vim输入法
+Plugin 'humiaozuzu/fcitx-status'            " 记录Fcitx状态
 Plugin 'drmingdrmer/xptemplate'             " 代码片断快速插入
+"Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'Valloric/YouCompleteMe'            " Ycm 使用源中已编译版
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -123,7 +123,7 @@ endif
 
 "*************************** My Configuration *****************************"
 " Author: Wang Hsutung
-" Update: 2015/10
+" Update: 2015/11
 " Locale: Hubei Wuhan
 " Email: hsu[AT]whu.edu.cn
 
@@ -252,4 +252,6 @@ let g:vimim_cloud = 'sogou,baidu,qq'
 
 " XP Template
 let g:xptemplate_vars = "SParg="
+let g:xptemplate_vars = "BRfun= "
+let g:xptemplate_vars = "$SParg^="
 

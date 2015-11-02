@@ -19,7 +19,7 @@ let s:htmlTemplate = "~/Templates/HTML文档.html"
 let s:shTemplate = "~/Templates/Shell脚本.sh"
 let s:pyTemplate = "~/Templates/Python样本.py"
 
-autocmd BufNewFile *.h call HeaderTemplate()
+autocmd BufNewFile *.h,*.hpp call HeaderTemplate()
 autocmd BufNewFile *.c,*.cpp,*.sh,*.py,*.html,*akefile,*.java call LoadTemplate()
 autocmd Filetype c,cpp,sh,python,html,vim,java,cs call SourceCodeMode()
 
@@ -47,16 +47,16 @@ function! SourceCodeMode()
             let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_c.py'
             setlocal makeprg=gcc\ -g\ -Wall\ %\ -o\ %<
         endif
-        if filereadable("Makefile") || filereadable("makefile") || filereadable("GNUmake")
-            setlocal makeprg=make
-        endif
         let g:runprg = expand("./%<")
         call QuickInsertion()
     elseif &filetype == "cpp"
-        if !(filereadable("Makefile") || filereadable("makefile") || filereadable("GNUmake"))
+        if search('[\"<]opencv2/opencv\.hpp[\">]', 'n') > 0
+            let &makeprg = "g++ -g -Wall `pkg-config --libs --cflags opencv` % -o %<"
+        else
             setlocal makeprg=g++\ -g\ -Wall\ -std=c++11\ %\ -o\ %<
         endif
         let g:runprg = expand("./%<")
+        let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_cpp.py'
         call QuickInsertion()
     elseif &filetype == "java"
         setlocal makeprg=javac\ %
@@ -76,7 +76,10 @@ function! SourceCodeMode()
         let g:runprg = expand("xdg-open %")
     endif
     " *.h 是特殊情况，由于默认它被识别为 cpp 文件
-    if expand('%:e') == "h"
+    if expand('%:e') == "h" || expand('%:e') == "hpp"
+        setlocal makeprg=make
+    endif
+    if filereadable("Makefile") || filereadable("makefile") || filereadable("GNUmake")
         setlocal makeprg=make
     endif
 endfunction

@@ -62,5 +62,6 @@ endif
 let g:airline_theme = 'molokai'
 colorscheme molokai
 ":inoremap <c-s> <ESC>:w<CR>a       " Ctrl-S 保存, 已经不需要
+autocmd Filetype text,markdown set spell
 set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline\ 11
 set guioptions-=T
