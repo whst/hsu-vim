@@ -126,7 +126,8 @@ endif
 " Locale: Hubei Wuhan
 " Email: hsu[AT]whu.edu.cn
 
-colorscheme koehler
+"colorscheme koehler
+colorscheme apprentice
 let mapleader = ","
 set dictionary+=/usr/share/dict/words
 set number           " 显示行号
