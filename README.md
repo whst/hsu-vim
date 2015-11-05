@@ -5,13 +5,22 @@
 欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常棒的插件 :-)  
 
 ## 安装方法
-<del>1. 克隆本配置到本地:<br></del>
-<del>2. 安装 [Vundle](https://github.com/VundleVim/Vundle.vim), 一个 Vim 插件管理器;<br></del>
-<del>3. 安装 Debian 8 源里已经编译好的 Ycm 插件 (Ubuntu 14.04 以后的版本也有)<br></del>
-<del>4. 用 Vim-addon-manager 把 Ycm 链接到 ~/.vim 目录下<br></del>
-<del>5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)<br></del>
-1. 执行 `git clone https://github.com/whst/hsu-vim.git ~/.vim && sh ~/.vim/gitfiles/install.sh`
-2. 把 ~/.vim/myconf/sourceCodeMode.vim 中的个人信息改成自己的
+1. 克隆本配置到本地;
+2. 安装 [Vundle](https://github.com/VundleVim/Vundle.vim), 一个 Vim 插件管理器;
+3. 安装 Debian 8 源里已经编译好的 Ycm 插件 (Ubuntu 14.04 以后的版本也有)
+4. 用 Vim-addon-manager 把 Ycm 链接到 ~/.vim 目录下
+5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)
+6. 把 Fcitx 状态插件的 timeout 值改为 900 毫秒
+
+[可选] 把 ~/.vim/myconf/sourceCodeMode.vim 中的个人信息改成自己的
+```
+git clone git@github.com:whst/hsu-vim.git
+sudo apt-get install -y vim-addon-manager vim-youcompleteme
+vam install youcompleteme
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim -c "execute \"PluginInstall\" | qa"
+sed -i "s/set timeoutlen=150/set timeoutlen=900/g" ~/.vim/bundle/fcitx-status/plugin/fcitx.vim
+```
 
 ## Vim 配置功能说明
 
