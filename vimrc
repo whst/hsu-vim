@@ -228,6 +228,7 @@ let g:indentLine_color_tty_light = 7 " (default: 4)
 let g:indentLine_color_dark = 1 " (default: 2)
 
 " Airline设置
+set noshowmode " 不显示自带状态栏
 set laststatus=2
 " 使用 Powerline 打过补丁的字体
 let g:airline_powerline_fonts = 1
