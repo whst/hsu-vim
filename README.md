@@ -1,19 +1,38 @@
-# Vim 配置备份
+# Vim Configuration Backup
 
 #### By Wang Hsutung
 
 欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常棒的插件 :-)  
 
-## 安装方法
-<del>1. 克隆本配置到本地:<br></del>
-<del>2. 安装 [Vundle](https://github.com/VundleVim/Vundle.vim), 一个 Vim 插件管理器;<br></del>
-<del>3. 安装 Debian 8 源里已经编译好的 Ycm 插件 (Ubuntu 14.04 以后的版本也有)<br></del>
-<del>4. 用 Vim-addon-manager 把 Ycm 链接到 ~/.vim 目录下<br></del>
-<del>5. 运行 `:PluginInstall` 安装所有插件 (Github 在中国网速慢, 请耐心等待)<br></del>
-1. 执行 `git clone https://github.com/whst/hsu-vim.git ~/.vim && sh ~/.vim/gitfiles/install.sh`
-2. 把 ~/.vim/myconf/sourceCodeMode.vim 中的个人信息改成自己的
+## How to install
 
-## Vim 配置功能说明
+Installation procedures and corresponding commands are as follows:
+```
+#0. Backup your previous Vim configuration.
+
+#1. Clone this repository to ~/.vim directory
+git clone https://github.com/whst/hsu-vim.git ~/.vim
+
+#2. Install plugin manager *Vundle*
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+#3. Install YouCompleteMe plugin for Vim in repository (Debian >= 8.1, Ubuntu >= 14.04.3)
+sudo apt-get install vim-addon-manager vim-youcompleteme && vam install youcompleteme
+
+#4. Install all plugins with Vundle.
+# Note: Accessing GitHub in China may be slow. Be patient.
+vim -c "execute \"PluginInstall\" | qa"
+
+### Following procedures are OPTIONAL: ###
+
+# Edit personal info in  ~/.vim/myconf/sourceCodeMode.vim
+vim ~/.vim/myconf/sourceCodeMode.vim
+
+# execute this command if you input Chinese with fcitx
+sed -i "s/set timeoutlen=150/set timeoutlen=1000/g" ~/.vim/bundle/fcitx-status/plugin/fcitx.vim
+```
+
+## Features
 
 * 编辑 C/C++、Java、Python 等文件时，按 `<F3>` 进行语义补全；
 ![Ycm Completion](https://raw.githubusercontent.com/whst/hsu-vim/master/gitfiles/auto.png) <br>
