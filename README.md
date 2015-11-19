@@ -35,7 +35,7 @@ sed -i "s/set timeoutlen=150/set timeoutlen=1000/g" ~/.vim/bundle/fcitx-status/p
 
 ## Features
 
-* When editing C/C++, Javar, Python source code file, you can press `<F3>` for semantic completion:
+* Press `<F3>` for **semantic completion** when editing C/C++, Java, Python source code files:
 ![Ycm Completion](https://raw.githubusercontent.com/whst/hsu-vim/master/gitfiles/auto.png) <br>
 YouCompleteMe is very powerful. As you can see from the sreenshot above, features in **C++11** such as type deduction are supported.
 * Simple code snippet insertions:
@@ -48,14 +48,14 @@ YouCompleteMe is very powerful. As you can see from the sreenshot above, feature
  * Press `\\dw` to insert `do {} while ();`
  * Press `\\cl` to insert `class X{};`
  * Press `\\st` to insert `struct X{};`
-* 插入状态下，快速地按两次分号，可在行尾追加「；」并跳转到下一行；
+* Press `;` twice in INERT mode, an semicolon will be appended to the end of current line, and the cursor will jump to a new line;
 * Fast Build:
  1. 按 `<F5>` 编译当前文件. 如果当前目录下有 Makefile, 直接 make, 否则执行类似 `gcc -Wall -g main.cpp -o main` 的命令.
  可以调用 `:call SetMakeprg()` 设置编译程序的命令和参数
  2. 按 `<F7>` 执行对应可执行文件(比如, 在编辑 main.cpp, 则运行 ./main)
  3. 按 `<F9>` 一键编译运行
  可以调用 `:call SetRunprg()` 设置执行可执行的命令和参数
-* Vim 默认剪贴板和系统剪贴板关联；
+* Bind Vim's clipboard to the system's clipboard;
 * 若用 Vim 编辑了没有写权限的文件，比如某些需要 root 权限的系统配置文件，可使用命令 `w!!` 强制写入 (需要输入 Root 密码)；
 * 更友好的补全方式：对于在按下 `Tab` 键后补全有歧义的情况，给出所有可能输入的选项列表，不断按下 `Tab` 键可在这些选项中循环。如图：
 ![Tab Completion](https://raw.githubusercontent.com/whst/hsu-vim/master/gitfiles/tab_completion.png) <br>
