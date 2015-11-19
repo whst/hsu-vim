@@ -57,5 +57,6 @@ sed -i "s/set timeoutlen=150/set timeoutlen=1000/g" ~/.vim/bundle/fcitx-status/p
  可以调用 `:call SetRunprg()` 设置执行可执行的命令和参数
 * Vim 默认剪贴板和系统剪贴板关联；
 * 若用 Vim 编辑了没有写权限的文件，比如某些需要 root 权限的系统配置文件，可使用命令 `w!!` 强制写入 (需要输入 Root 密码)；
-* 更友好的部全方式：对于在按下 `Tab` 键后补全有歧义的情况，给出所有可能输入的选项列表，不断按下 `Tab` 键可在这些选项中循环。如图：
+* 更友好的补全方式：对于在按下 `Tab` 键后补全有歧义的情况，给出所有可能输入的选项列表，不断按下 `Tab` 键可在这些选项中循环。如图：
 ![Tab Completion](https://raw.githubusercontent.com/whst/hsu-vim/master/gitfiles/tab_completion.png) <br>
+* And more to be discovered...
