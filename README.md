@@ -1,13 +1,13 @@
-# Vim Configuration Backup
+# Hsu-Vim Configuration
 
 #### By Wang Hsutung
 
 欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常棒的插件 :-)  
+*P.s.* I've been interested in Emacs recently. But still, I mostly use Vim.
 
 ## How to install
 
 Installation procedures and corresponding commands are as follows:
-
 ```
 #0. Backup your previous Vim configuration.
 
@@ -35,21 +35,21 @@ sed -i "s/set timeoutlen=150/set timeoutlen=1000/g" ~/.vim/bundle/fcitx-status/p
 
 ## Features
 
-* 编辑 C/C++、Java、Python 等文件时，按 `<F3>` 进行语义补全；
+* When editing C/C++, Javar, Python source code file, you can press `<F3>` for semantic completion:
 ![Ycm Completion](https://raw.githubusercontent.com/whst/hsu-vim/master/gitfiles/auto.png) <br>
-上图可以看出语义补全**支持 C++11** 的 auto 类型推导。
-* 简单的代码片段插入：
- * 按 `\\if` 可快速插入 `if () {}`
- * 按 `\\ie` 可快速插入 `if () {} else {}`
- * 按 `\\ei` 可快速插入 `else if () {}`
- * 按 `\\el` 可快速插入 `else {}`
- * 按 `\\fo` 可快速插入 `for (;;) {}`
- * 按 `\\wh` 可快速插入 `while () {}`
- * 按 `\\dw` 可快速插入 `do {} while ();`
- * 按 `\\cl` 可快速插入 `class X{};`
- * 按 `\\st` 可快速插入 `struct X{};`
+YouCompleteMe is very powerful. As you can see from the sreenshot above, features in **C++11** such as type deduction are supported.
+* Simple code snippet insertions:
+ * Press `\\if` to insert `if () {}`
+ * Press `\\ie` to insert `if () {} else {}`
+ * Press `\\ei` to insert `else if () {}`
+ * Press `\\el` to insert `else {}`
+ * Press `\\fo` to insert `for (;;) {}`
+ * Press `\\wh` to insert `while () {}`
+ * Press `\\dw` to insert `do {} while ();`
+ * Press `\\cl` to insert `class X{};`
+ * Press `\\st` to insert `struct X{};`
 * 插入状态下，快速地按两次分号，可在行尾追加「；」并跳转到下一行；
-* 快速编译运行:
+* Fast Build:
  1. 按 `<F5>` 编译当前文件. 如果当前目录下有 Makefile, 直接 make, 否则执行类似 `gcc -Wall -g main.cpp -o main` 的命令.
  可以调用 `:call SetMakeprg()` 设置编译程序的命令和参数
  2. 按 `<F7>` 执行对应可执行文件(比如, 在编辑 main.cpp, 则运行 ./main)
