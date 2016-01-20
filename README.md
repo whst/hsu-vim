@@ -1,8 +1,10 @@
-# Hsu-Vim Configuration
+# My Vim Configuration
 
 #### By Wang Hsutung
 
-欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常棒的插件 :-)  
+> 欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常棒的插件 :-)
+ 另外下面的 introduction 若有语法或拼写错误, 也请告诉我
+
 *P.s.* I've been interested in Emacs recently. But still, I mostly use Vim.
 
 ## How to install
@@ -50,13 +52,14 @@ YouCompleteMe is very powerful. As you can see from the sreenshot above, feature
  * Press `\\st` to insert `struct X{};`
 * Press `;` twice in INERT mode, an semicolon will be appended to the end of current line, and the cursor will jump to a new line;
 * Fast Build:
- 1. 按 `<F5>` 编译当前文件. 如果当前目录下有 Makefile, 直接 make, 否则执行类似 `gcc -Wall -g main.cpp -o main` 的命令.
- 可以调用 `:call SetMakeprg()` 设置编译程序的命令和参数
- 2. 按 `<F7>` 执行对应可执行文件(比如, 在编辑 main.cpp, 则运行 ./main)
- 3. 按 `<F9>` 一键编译运行
- 可以调用 `:call SetRunprg()` 设置执行可执行的命令和参数
+ 1. Press `<F5>` to compile. The command to execute for compilation is such that: When there's a Makefile in work directory, execute `make`, otherwise execute `gcc -Wall -g main.c -o main`;
+    P.s.
+    * You may manually set custom command by `:SetMakeprg`;
+    * `<F5>` key will not save the file for you, you have to do it manually.
+ 2. Press `<F7>` will run corresponding executable file. Say you're editing test.cpp, then ./test will be run; If it's test.sh, then `sh test.py` will be run. To set the way to run execrable file, call `:SetRunprg`;
+ 3. Press `<F9>` to save file and build. If no errors or warnings are encountered, run the program.
 * Bind Vim's clipboard to the system's clipboard;
-* 若用 Vim 编辑了没有写权限的文件，比如某些需要 root 权限的系统配置文件，可使用命令 `w!!` 强制写入 (需要输入 Root 密码)；
-* 更友好的补全方式：对于在按下 `Tab` 键后补全有歧义的情况，给出所有可能输入的选项列表，不断按下 `Tab` 键可在这些选项中循环。如图：
+* If you mistakenly edited a file that is not writable, use `:w!!` force to write (Root password required).
+* More friendly command completion: For ambiguous prefix, list all possible options. To switch between then, press `Tab` successively.
 ![Tab Completion](https://raw.githubusercontent.com/whst/hsu-vim/master/gitfiles/tab_completion.png) <br>
 * And more to be discovered...
