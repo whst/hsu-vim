@@ -12,7 +12,7 @@ Plugin 'luochen1990/rainbow'                " 彩虹括号
 Plugin 'Valloric/ListToggle'                " QuickFix
 Plugin 'artur-shaik/vim-javacomplete2'      " Java补全
 Plugin 'taglist.vim'                        " Tag列表
-Plugin 'whst/vim-colorschemes'              " Vim 配色
+Plugin 'flazz/vim-colorschemes'              " Vim 配色
 Plugin 'Yggdroot/indentLine'                " 缩进线
 Plugin 'The-NERD-tree'                      " 文件窗口
 Plugin 'minibufexplorerpp'                  " 可视化标签
@@ -127,7 +127,7 @@ endif
 " Email: hsu[AT]whu.edu.cn
 
 "colorscheme koehler
-colorscheme apprentice
+colorscheme wombat256i
 let mapleader = ","
 set dictionary+=/usr/share/dict/words
 set number           " 显示行号
