@@ -22,7 +22,8 @@ Plugin 'vim-scripts/VimIM'                  " Vim输入法
 Plugin 'humiaozuzu/fcitx-status'            " 记录Fcitx状态
 Plugin 'drmingdrmer/xptemplate'             " 代码片断快速插入
 Plugin 'neovimhaskell/haskell-vim'          " Haskell支持
-"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'kovisoft/slimv'                     " Lisp支持
+Plugin 'tpope/vim-surround'                 " 括号更改
 "Plugin 'Valloric/YouCompleteMe'            " Ycm 使用源中已编译版
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

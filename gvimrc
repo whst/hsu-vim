@@ -62,6 +62,5 @@ endif
 let g:airline_theme = 'molokai'
 colorscheme molokai
 autocmd Filetype text,markdown set spell
-"set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline\ 11
-set guifont=Meslo\ LG\ M\ for\ Powerline\ 11
+set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline\ 11
 set guioptions-=T

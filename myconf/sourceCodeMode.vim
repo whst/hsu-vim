@@ -22,18 +22,13 @@ let s:pyTemplate = "~/Templates/Python样本.py"
 autocmd BufNewFile *.h,*.hpp call HeaderTemplate()
 autocmd BufNewFile *.c,*.cpp,*.sh,*.py,*.html,*akefile,*.java call LoadTemplate()
 autocmd Filetype c,cpp,sh,python,html,vim,java,cs call SourceCodeMode()
+" 检查可执行文本文档
+autocmd BufWritePost * if getline(1) =~ "^#!" | call system("chmod +x " . expand("%")) | let g:runprg="./" . expand("%") | endif
 
 function! SourceCodeMode()
     inoremap ;; <Esc>A;<CR>
     inoremap ' ''<Esc>i
     inoremap " ""<Esc>i
-    "    inoremap ( ()<Esc>i
-    "    inoremap ) <C-r>=ClosePair(')')<CR>
-    "    inoremap {<CR> <C-r>=CloseBrace()<CR>
-    "    inoremap { {}<Esc>i
-    "    inoremap } <C-r>=ClosePair('}')<CR>
-    "    inoremap [ []<Esc>i
-    "    inoremap ] <C-r>=ClosePair(']')<CR>
     inoremap <C-Enter> <Esc>A;<CR>
     inoremap <S-Space> <Esc>la
 
@@ -65,15 +60,18 @@ function! SourceCodeMode()
     elseif &filetype == "cs"
         setlocal makeprg=gmcs\ %
         let g:runprg= expand("./%<.exe")
+    elseif &filetype == "html"
+        setlocal makeprg=echo\ -n
+        let g:runprg = expand("xdg-open %")
+    elseif executable("./" . expand("%"))
+        setlocal makeprg=echo\ -n
+        let g:runprg = "./" . expand("%")
     elseif &filetype == "python"
         setlocal makeprg=echo\ -n
         let g:runprg = expand("python3 %")
     elseif &filetype == "sh"
         setlocal makeprg=bash\ -n\ %
         let g:runprg = expand("bash %")
-    elseif &filetype == "html"
-        setlocal makeprg=echo\ -n
-        let g:runprg = expand("xdg-open %")
     endif
     " *.h 是特殊情况，由于默认它被识别为 cpp 文件
     if expand('%:e') == "h" || expand('%:e') == "hpp"
