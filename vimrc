@@ -21,7 +21,7 @@ Plugin 'bling/vim-airline'                  " 类似Powerline
 Plugin 'vim-scripts/VimIM'                  " Vim输入法
 Plugin 'humiaozuzu/fcitx-status'            " 记录Fcitx状态
 Plugin 'drmingdrmer/xptemplate'             " 代码片断快速插入
-Plugin 'neovimhaskell/haskell-vim'
+Plugin 'neovimhaskell/haskell-vim'          " Haskell支持
 "Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'Valloric/YouCompleteMe'            " Ycm 使用源中已编译版
 " All of your Plugins must be added before the following line
@@ -256,4 +256,3 @@ let g:vimim_cloud = 'sogou,baidu,qq'
 let g:xptemplate_vars = "SParg="
 let g:xptemplate_vars = "BRfun= "
 let g:xptemplate_vars = "$SParg^="
-
