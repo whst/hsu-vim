@@ -222,12 +222,11 @@ command! FileList NERDTreeToggle
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Vim Indent Line
-let g:indentLine_color_term = 239
-" GVim
-let g:indentLine_color_gui = '#A4E57E'
 " none X terminal
 let g:indentLine_color_tty_light = 7 " (default: 4)
 let g:indentLine_color_dark = 1 " (default: 2)
+let g:indentLine_fileTypeExclude = ['text', 'help', 'haskell', 'scheme']
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 
 " Airline设置
 set noshowmode " 不显示自带状态栏
