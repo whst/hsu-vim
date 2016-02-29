@@ -59,7 +59,7 @@ if version >= 500
 endif
 
 "下面是我设置的配色方案
-let g:airline_theme = 'molokai'
+"let g:airline_theme = 'molokai'
 colorscheme molokai
 autocmd Filetype text,markdown set spell
 set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline\ 11
