@@ -257,3 +257,5 @@ let g:vimim_cloud = 'sogou,baidu,qq'
 let g:xptemplate_vars = "SParg="
 let g:xptemplate_vars = "BRfun= "
 let g:xptemplate_vars = "$SParg^="
+
+let g:lisp_rainbow = 1
