@@ -119,7 +119,7 @@ function! HeaderTemplate()
         execute "%s/Date:/Date: " . s:timestr . "/g"
         execute "%s/Locale:/Locale: " . s:locale . "/g"
         execute "%s/Email:/Email: " . s:email . "/g"
-    endif	
+    endif
     echo "已载入模板"
 endfunction
 

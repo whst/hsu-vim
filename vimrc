@@ -148,10 +148,14 @@ set fileencodings=utf-8,prc,taiwan,japan
 inoremap <C-k> <C-x><C-k>
 inoremap <C-l> <C-x><C-l>
 " 简化切换窗口
-map <C-Up> <C-w><Up>
-map <C-Down> <C-w><Down>
-map <C-Left> <C-w><Left>
-map <C-Right> <C-w><Right>
+nnoremap <C-Up> <C-w><Up>
+nnoremap <C-Down> <C-w><Down>
+nnoremap <C-Left> <C-w><Left>
+nnoremap <C-Right> <C-w><Right>
+nnoremap <C-a>h <C-w><Left>
+nnoremap <C-a>j <C-w><Down>
+nnoremap <C-a>k <C-w><Up>
+nnoremap <C-a>l <C-w><Right>
 " 以下 Tab 设置由官方文档推荐
 set tabstop=4
 set softtabstop=4
