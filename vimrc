@@ -261,4 +261,6 @@ let g:xptemplate_vars = "SParg="
 let g:xptemplate_vars = "BRfun= "
 let g:xptemplate_vars = "$SParg^="
 
+" slimv
 let g:lisp_rainbow = 1
+"let g:slimv_repl_split = 4

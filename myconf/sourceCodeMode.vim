@@ -18,23 +18,24 @@ let s:javaTemplate = "~/Templates/Java类样本.java"
 let s:htmlTemplate = "~/Templates/HTML文档.html"
 let s:shTemplate = "~/Templates/Shell脚本.sh"
 let s:pyTemplate = "~/Templates/Python样本.py"
+let s:hsTemplate = "~/Templates/Haskell样本.hs"
 
 autocmd BufNewFile *.h,*.hpp call HeaderTemplate()
-autocmd BufNewFile *.c,*.cpp,*.sh,*.py,*.html,*akefile,*.java call LoadTemplate()
-autocmd Filetype c,cpp,sh,python,html,vim,java,cs call SourceCodeMode()
+autocmd BufNewFile *.c,*.cpp,*.sh,*.py,*.html,*akefile,*.java,*.hs call LoadTemplate()
+autocmd Filetype c,cpp,sh,python,html,vim,java,cs,haskell call SourceCodeMode()
 " 检查可执行文本文档
 autocmd BufWritePost * if getline(1) =~ "^#!" | call system("chmod +x " . expand("%")) | let g:runprg="./" . expand("%") | endif
 
 function! SourceCodeMode()
-    inoremap ;; <Esc>A;<CR>
-    inoremap ' ''<Esc>i
-    inoremap " ""<Esc>i
+    "inoremap ' ''<Esc>i
+    "inoremap " ""<Esc>i
     inoremap <C-Enter> <Esc>A;<CR>
     inoremap <S-Space> <Esc>la
 
     call QuickBuild()
 
     if &filetype == "c"
+        inoremap ;; <Esc>A;<CR>
         if search('[\"<]cv\.h[\">]', 'n') > 0
             let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_c_opencv.py'
             let &makeprg = "gcc -g -Wall `pkg-config --libs --cflags opencv` % -o %<"
@@ -45,6 +46,7 @@ function! SourceCodeMode()
         let g:runprg = expand("./%<")
         call QuickInsertion()
     elseif &filetype == "cpp"
+        inoremap ;; <Esc>A;<CR>
         if search('[\"<]opencv2/opencv\.hpp[\">]', 'n') > 0
             let &makeprg = "g++ -g -Wall `pkg-config --libs --cflags opencv` % -o %<"
         else
@@ -54,10 +56,12 @@ function! SourceCodeMode()
         let g:ycm_global_ycm_extra_conf = '~/.vim/myconf/ycm_extra_conf_cpp.py'
         call QuickInsertion()
     elseif &filetype == "java"
+        inoremap ;; <Esc>A;<CR>
         setlocal makeprg=javac\ %
         let g:runprg= expand("java %<")
         call QuickInsertion()
     elseif &filetype == "cs"
+        inoremap ;; <Esc>A;<CR>
         setlocal makeprg=gmcs\ %
         let g:runprg= expand("./%<.exe")
     elseif &filetype == "html"
@@ -72,6 +76,9 @@ function! SourceCodeMode()
     elseif &filetype == "sh"
         setlocal makeprg=bash\ -n\ %
         let g:runprg = expand("bash %")
+    elseif &filetype == "haskell"
+        setlocal makeprg=ghc\ %\ -o\ %<\ &&\ rm\ -f\ %<.o\ %<.hi
+        let g:runprg = expand("./%<")
     endif
     " *.h 是特殊情况，由于默认它被识别为 cpp 文件
     if expand('%:e') == "h" || expand('%:e') == "hpp"
@@ -99,14 +106,14 @@ function! LoadTemplate()
         execute "0r " . s:shTemplate
     elseif &filetype == "python" && filereadable(expand(s:pyTemplate))
         execute "0r " . s:pyTemplate
+    elseif &filetype == "haskell" && filereadable(expand(s:hsTemplate))
+        execute "0r " . s:hsTemplate
     endif
     silent! execute "%s/Author:/Author: " . s:author . "/g"
     silent! execute "%s/Date:/Date: " . s:timestr . "/g"
     silent! execute "%s/Locale:/Locale: " . s:locale . "/g"
     silent! execute "%s/Email:/Email: " . s:email . "/g"
     0
-
-    echo "已载入模板"
 endfunction
 
 function! HeaderTemplate()
