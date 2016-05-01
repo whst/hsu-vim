@@ -128,18 +128,17 @@ endif
 " Locale: Hubei Wuhan
 " Email: hsu[AT]whu.edu.cn
 
-"colorscheme koehler
 colorscheme wombat256i
 let mapleader = ","
 set dictionary+=/usr/share/dict/words
-set number           " 显示行号
-set nobackup         " 不备份文件
-set noundofile       " 不产生撤销文件
-set wrapscan         " 搜索返回首部
-set whichwrap+=h,l   " 允许使光标跨行的键
-set expandtab        " 把 Tab 替换为空格
-set cinoptions=:0,g0 " case 和类属性标号不缩进
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set relativenumber      " 显示相对行号
+set nobackup            " 不备份文件
+set noundofile          " 不产生撤销文件
+set wrapscan            " 搜索返回首部
+set whichwrap+=h,l      " 允许使光标跨行的键
+set expandtab           " 把 Tab 替换为空格
+set cinoptions=:0,g0    " case 和类属性标号不缩进
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " 高亮多余的空白
 set list
 " Set default encoding(s)
 set fileencoding=utf-8
@@ -181,7 +180,11 @@ set iskeyword-=#                    " '#' is an end of word designator
 set iskeyword-=-                    " '-' is an end of word designator
 
 set cursorline                  " Highlight current line
-hi CursorLine  cterm=NONE   ctermbg=DarkGray
+"hi CursorLine  cterm=NONE   ctermbg=DarkGray
+highlight OverLength ctermbg=Black
+highlight ColorColumn ctermbg=Black
+match OverLength /\%81v.\+/     " Highlight 80+ columns
+let &colorcolumn=81             " Highlight column 81
 set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive when uc present
 set wildmenu                    " Show list instead of just completing
