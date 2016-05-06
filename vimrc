@@ -131,6 +131,7 @@ endif
 colorscheme wombat256i
 let mapleader = ","
 set dictionary+=/usr/share/dict/words
+set number
 set relativenumber      " 显示相对行号
 set nobackup            " 不备份文件
 set noundofile          " 不产生撤销文件
