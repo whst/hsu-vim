@@ -66,3 +66,27 @@ set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline\ 11
 set guioptions-=T
 highlight OverLength guibg=#2c2d27
 highlight ColorColumn guibg=#2c2d27
+
+set winaltkeys=no
+noremap <silent><c-tab> :tabprev<CR>
+inoremap <silent><c-tab> <ESC>:tabprev<CR>
+noremap <silent><m-1> :tabn 1<cr>
+noremap <silent><m-2> :tabn 2<cr>
+noremap <silent><m-3> :tabn 3<cr>
+noremap <silent><m-4> :tabn 4<cr>
+noremap <silent><m-5> :tabn 5<cr>
+noremap <silent><m-6> :tabn 6<cr>
+noremap <silent><m-7> :tabn 7<cr>
+noremap <silent><m-8> :tabn 8<cr>
+noremap <silent><m-9> :tabn 9<cr>
+noremap <silent><m-0> :tabn 10<cr>
+inoremap <silent><m-1> <ESC>:tabn 1<cr>
+inoremap <silent><m-2> <ESC>:tabn 2<cr>
+inoremap <silent><m-3> <ESC>:tabn 3<cr>
+inoremap <silent><m-4> <ESC>:tabn 4<cr>
+inoremap <silent><m-5> <ESC>:tabn 5<cr>
+inoremap <silent><m-6> <ESC>:tabn 6<cr>
+inoremap <silent><m-7> <ESC>:tabn 7<cr>
+inoremap <silent><m-8> <ESC>:tabn 8<cr>
+inoremap <silent><m-9> <ESC>:tabn 9<cr>
+inoremap <silent><m-0> <ESC>:tabn 10<cr>
