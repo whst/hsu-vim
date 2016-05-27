@@ -59,13 +59,13 @@ if version >= 500
 endif
 
 "====================================================="
-colorscheme molokai     "配色方案
 "let g:airline_theme = 'molokai'
 autocmd Filetype text,markdown set spell
 set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline\ 11
 set guioptions-=T
 highlight OverLength guibg=#2c2d27
 highlight ColorColumn guibg=#2c2d27
+colorscheme solarized
 
 set winaltkeys=no
 noremap <silent><c-tab> :tabprev<CR>
