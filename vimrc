@@ -276,7 +276,7 @@ nnoremap <F4> call javacomplete#AddImport()<cr>
 let g:rainbow_active = 1
 
 " Vimim
-let g:Vimim_shuangpin = 'ms'
+let g:Vimim_shuangpin = 'flypy'
 let g:vimim_cloud = 'sogou,baidu,qq'
 
 " XP Template
