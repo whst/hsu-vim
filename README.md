@@ -1,38 +1,21 @@
 # My Vim Configuration
 
-#### By Wang Hsutung
-
-> 欢迎 __喜欢 Vim 的同学__ 与我交流 Vim 使用中的一些小技巧, 亦或是一些非常棒的插件 :-)
- 另外下面的 introduction 若有语法或拼写错误, 也请告诉我
-
-*P.s.* I've been interested in Emacs recently. But still, I mostly use Vim.
-
 ## How to install
 
 Installation procedures and corresponding commands are as follows:
 ```
-#0. Backup your previous Vim configuration.
+# 0. Backup your previous Vim configuration.
 
-#1. Clone this repository to ~/.vim directory
+# 1. Clone this repository to ~/.vim directory
 git clone https://github.com/whst/hsu-vim.git ~/.vim
 
-#2. Install plugin manager *Vundle*
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# 2. Install vim-plug (a plugin manager)
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-#3. Install YouCompleteMe plugin for Vim in repository (Debian >= 8.1, Ubuntu >= 14.04.3)
-sudo apt-get install vim-addon-manager vim-youcompleteme && vam install youcompleteme
-
-#4. Install all plugins with Vundle.
+# 4. Install all plugins with Vundle.
 # Note: Accessing GitHub in China may be slow. Be patient.
-vim -c "execute \"PluginInstall\" | qa"
-
-### Following procedures are OPTIONAL: ###
-
-# Edit personal info in  ~/.vim/myconf/sourceCodeMode.vim
-vim ~/.vim/myconf/sourceCodeMode.vim
-
-# execute this command if you input Chinese with fcitx
-sed -i "s/set timeoutlen=150/set timeoutlen=1000/g" ~/.vim/bundle/fcitx-status/plugin/fcitx.vim
+vim -c "execute \"PlugInstall\" | qa"
 ```
 
 ## Features

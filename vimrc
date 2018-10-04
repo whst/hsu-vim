@@ -1,34 +1,28 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'                  " Vundle必选
-Plugin 'jiangmiao/auto-pairs'               " 括号补全
-Plugin 'asins/vimcdoc'                      " 中文文档
-Plugin 'luochen1990/rainbow'                " 彩虹括号
-Plugin 'Valloric/ListToggle'                " QuickFix
-Plugin 'artur-shaik/vim-javacomplete2'      " Java补全
-Plugin 'taglist.vim'                        " Tag列表
-Plugin 'flazz/vim-colorschemes'              " Vim 配色
-Plugin 'Yggdroot/indentLine'                " 缩进线
-Plugin 'The-NERD-tree'                      " 文件窗口
-Plugin 'minibufexplorerpp'                  " 可视化标签
-Plugin 'Visual-Mark'                        " 可视化书签
-Plugin 'bling/vim-airline'                  " 类似Powerline
-Plugin 'vim-scripts/VimIM'                  " Vim输入法
-Plugin 'humiaozuzu/fcitx-status'            " 记录Fcitx状态
-Plugin 'drmingdrmer/xptemplate'             " 代码片断快速插入
-Plugin 'neovimhaskell/haskell-vim'          " Haskell支持
-Plugin 'kovisoft/slimv'                     " Lisp支持
-Plugin 'tpope/vim-surround'                 " 括号更改
+Plug 'gmarik/Vundle.vim'                  " Vundle必选
+Plug 'jiangmiao/auto-pairs'               " 括号补全
+Plug 'asins/vimcdoc'                      " 中文文档
+Plug 'luochen1990/rainbow'                " 彩虹括号
+Plug 'Valloric/ListToggle'                " QuickFix
+Plug 'artur-shaik/vim-javacomplete2'      " Java补全
+"Plug 'taglist.vim'                        " Tag列表
+Plug 'flazz/vim-colorschemes'              " Vim 配色
+Plug 'Yggdroot/indentLine'                " 缩进线
+"Plug 'The-NERD-tree'                      " 文件窗口
+"Plug 'minibufexplorerpp'                  " 可视化标签
+"Plug 'Visual-Mark'                        " 可视化书签
+Plug 'bling/vim-airline'                  " 类似Powerline
+Plug 'vim-scripts/VimIM'                  " Vim输入法
+Plug 'humiaozuzu/fcitx-status'            " 记录Fcitx状态
+Plug 'drmingdrmer/xptemplate'             " 代码片断快速插入
+Plug 'neovimhaskell/haskell-vim'          " Haskell支持
+Plug 'kovisoft/slimv'                     " Lisp支持
+Plug 'tpope/vim-surround'                 " 括号更改
 "Plugin 'Valloric/YouCompleteMe'            " Ycm 使用源中已编译版
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" Put non-Plugin stuff after this line
+
+call plug#end()
+
 "************************** VIMRC Example ***********************************"
 " An example for a vimrc file.
 "
